@@ -1,6 +1,8 @@
 # Style Your Shell With Swagger!
 
-The Linux shell can be a cold, dark, lonely place. It only takes a little software to make it a brighter, colorful, and user-friendly place. This workshop will spruce up your Linux console experience with the Fish shell and software that provides additional functionalities beyond the Coreutils. We'll also learn how to install software outside the Ubuntu repositories, as well as some choice software. Please take a moment to appreciate our free software community for producing tools that respect the user's freedom.
+The Linux shell can be a cold, dark, lonely place. It only takes a little software to make it a brighter, colorful, and user-friendly place. This workshop will spruce up your Linux console experience with the Fish shell and software that provides additional functionalities beyond the Coreutils. We'll also learn how to install software outside the Ubuntu repositories, as well as some choice software.
+
+All software installed today is free (as in beer and freedom) and open source! Please take a moment to appreciate the free software community for developing tools that respect the user's freedom.
 
 ## Prerequisities
 
@@ -10,14 +12,13 @@ Please note that Ubuntu 20.04 has not packaged all the software we are using tod
 
 ## Installation
 
-```
+```bash
 git clone {this repo}
 cd {this repo}
 # review the script to check for malware
 less ./install-command-line-tools.sh
-less ./install-and-compile-notcurses.sh
-# run the scripts
-./install-command-line-tools.sh && ./install-and-compile-notcurses.sh
+# run the script
+./install-command-line-tools.sh
 ```
 
 ## How does Linux software distribution work?
@@ -104,7 +105,10 @@ less ./install-and-compile-notcurses.sh
 
 We did this earlier!
 
-```
+```bash
+cd {path to repo}
+less ./compile-notcurses.sh
+./compile-notcurses.sh
 cd ~/bitcamp/notcurses-3.0.8
 make ncneofetch nctetris
 ./ncneofetch
@@ -116,13 +120,21 @@ make demo
 - yadm is a dotfiles manager. If you know how to use git, you know how to use yadm.
 - make sure to set your git username and email!
 
-```
+```bash
 yadm init
 yadm add {files}
 yadm commit
 yadm remote add main {your git repository}
 yadm push main
-````
+```
+
+## Don't like these changes? Reset them!
+
+```bash
+rm -r ~/bitcamp
+cd {this repository}
+./uninstall.sh (coming soon)
+```
 
 ## License
 
