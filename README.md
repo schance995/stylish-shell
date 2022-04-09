@@ -6,7 +6,7 @@ All software installed today is free (as in money and freedom) and open source! 
 
 ## Prerequisities
 
-You should have Ubuntu/Linux installed (either on your hard drive or WSL) before starting. If you don't have Ubuntu, don't worry! Most of the software covered here is available to install on other platforms and other distributions.
+You should have Ubuntu/Linux installed (either on your hard drive or WSL) before starting. If you don't have Ubuntu, don't worry! Most of the software covered here is available to install on other platforms and other distributions. There should be no need to edit any files today, the scripts should have all the needed configuration.
 
 Please note that Ubuntu 20.04 has not packaged all the software we are using today. So we will install them by some other way. Ubuntu 22.04 (coming this month!) will have some of these packages available.
 
@@ -29,7 +29,16 @@ less ./install-command-line-tools.sh
   - Ubuntu
   - RedHat
 
-## getting help
+## How to install software on Linux (abridged version)
+- Package manager (recommended!)
+- Sometimes the software we want is not available there :(
+- Solutions:
+  - Extend the repositories with PPA (personal package archive)
+  - Install software directly from upstream
+    - from .deb package or precompiled binary
+    - do it yourself, compile from source
+
+## Getting help
 - `man man` (reference manual)
 - `info info` (textbook)
 - `tldr tldr` (examples)
@@ -76,10 +85,13 @@ less ./install-command-line-tools.sh
 - neofetch
     - print a cool ascii logo
 
-## Honorable mention: Zsh
-- POSIX like Bash
-- Plugins like Fish: zsh-syntax-highlighting and zsh-autosuggestions
-- A sample configuration file is provided
+## Honorable mentions
+- Zsh
+  - POSIX like Bash
+  - Plugins like Fish: zsh-syntax-highlighting and zsh-autosuggestions
+- Micro
+  - Like the nano editor
+  - Comes with nice keyboard shortcuts out of the box
 
 ## Media and documents
 - pandoc
@@ -112,7 +124,7 @@ less ./install-command-line-tools.sh
 
 ## Install and compile notcurses
 
-Notcurses is a modern terminal gui library
+Notcurses is a modern terminal gui library with some fun demos.
 
 ```bash
 cd {path to repo}
