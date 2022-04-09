@@ -32,6 +32,7 @@ less ./install-command-line-tools.sh
 ## How to install software on Linux (abridged version)
 - Package manager (recommended!)
 - Sometimes the software we want is not available there :(
+- Or maybe the version there is not the one we want
 - Solutions:
   - Extend the repositories with PPA (personal package archive)
   - Install software directly from upstream
