@@ -114,7 +114,7 @@ less ./install-command-line-tools.sh
     - invert images
       - `convert bitcamp.png -channel RGB -negate bitcamp-inverted.png`
     - do it all!
-      - `convert bitcamp.png -rotate 90 -channel RGB -negate -scale 50% bitcamp.jpg`
+      - `convert bitcamp.png -rotate 90 -channel RGB -negate -scale 50% bitcamp-wacky.jpg`
 
 ## System info
 - top/htop
