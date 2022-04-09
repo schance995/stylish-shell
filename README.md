@@ -15,7 +15,7 @@ Please note that Ubuntu 20.04 has not packaged all the software we are using tod
 ```bash
 git clone {this repo}
 cd {this repo}
-# review the script to check for malware
+# review the script to check that it looks ok
 less ./install-command-line-tools.sh
 # run the script
 ./install-command-line-tools.sh
@@ -38,6 +38,7 @@ less ./install-command-line-tools.sh
   - Install software directly from upstream
     - from .deb package or precompiled binary
     - do it yourself, compile from source
+    - make sure you add this software to your path!
 
 ## Getting help
 - `man man` (reference manual)
@@ -63,6 +64,9 @@ less ./install-command-line-tools.sh
 ## Fish and friends
 - **Not** POSIX
 - Typically **not** installed by default
+- Copy the configuration file:
+  - `cd {path to this repo}`
+  - `cp config.fish ~/.config/fish`
 - bat
   - like cat
 - exa
@@ -81,8 +85,8 @@ less ./install-command-line-tools.sh
     - interactive selector
 - zoxide
     - change directories by frecency
-    - add `zoxide init fish | source` to `~/.config/init/config.fish`
-    - to go to a directory type `z {any part of directory`!
+    - add `zoxide init fish | source` to `~/.config/init/config.fish` (should be in the config.fish file in this repo)
+    - to go to a directory type `z {any part of directory}`!
 - neofetch
     - print a cool ascii logo
 
@@ -98,12 +102,6 @@ less ./install-command-line-tools.sh
 - pandoc
     - convert this document!
     - `pandoc style-your-shell-with-swagger.md -o style-your-shell-swith-swagger.pdf`
-- yt-dlp
-    - a fork of youtube-dl
-    - `yt-dlp https://www.youtube.com/watch?v=dQw4w9WgXcQ`
-    - open the file with `wslview`
-- ffmpeg
-    - split audio and video into separate files (mp4 and ogg)
 - imagemagick
     - `wget https://bit.camp/bitcamp-brand/logos/bitcamp.png`
     - convert to jpg
@@ -116,7 +114,14 @@ less ./install-command-line-tools.sh
       - `convert bitcamp.png -channel RGB -negate bitcamp-inverted.png`
     - do it all!
       - `convert bitcamp.png -rotate 90 -channel RGB -negate -scale 50% bitcamp-wacky.jpg`
-
+- yt-dlp
+    - a fork of youtube-dl
+    - `yt-dlp https://www.youtube.com/watch?v=dQw4w9WgXcQ`
+    - open the file with `wslview`
+- ffmpeg
+    - extract audio
+      - `ffmpeg -i video.mp4 -vn audio.mp3`
+    - there's a lot you can do with video that we don't have time for today!
 ## System info
 - top/htop
   - task manager
@@ -155,6 +160,7 @@ yadm push main
 ```bash
 rm -r ~/bitcamp
 cd {this repository}
+less ./uninstall.sh
 ./uninstall.sh
 ```
 
