@@ -1,8 +1,8 @@
 # Style Your Shell With Swagger!
 
-The Linux shell can be a cold, dark, lonely place. It only takes a little software to make it a brighter, colorful, and user-friendly place. This workshop will spruce up your Linux console experience with the Fish shell and software that provides additional functionalities beyond the Coreutils. We'll also learn how to install software outside the Ubuntu repositories, as well as some choice software.
+The Linux shell can be a cold, dark, lonely place. It only takes a little software to make it brighter, colorful, and newbie-friendly. This workshop will spruce up your Linux console experience with the Fish shell and software that provides additional functionalities beyond the Coreutils. We'll also learn how to install software outside the Ubuntu repositories, as well as some useful command-line tools.
 
-All software installed today is free (as in beer and freedom) and open source! Please take a moment to appreciate the free software community for developing tools that respect the user's freedom.
+All software installed today is free (as in money and freedom) and open source! Please take a moment to appreciate the free software community for developing 0-cost tools that respect the user's freedom.
 
 ## Prerequisities
 
@@ -43,7 +43,7 @@ less ./install-command-line-tools.sh
   - lists files
 - grep
   - searches files for text
-- find | xargs
+- find -exec
   - finds files and runs commands on them
 - diff
   - finds the difference between files
@@ -60,7 +60,7 @@ less ./install-command-line-tools.sh
 - ripgrep
   - like grep
 - fd
-  - like find | xargs
+  - like find -exec
 - delta
   - like diff
 - trash
@@ -90,20 +90,29 @@ less ./install-command-line-tools.sh
     - `yt-dlp https://www.youtube.com/watch?v=dQw4w9WgXcQ`
     - open the file with `wslview`
 - ffmpeg
-    - extract audio and video
-    - convert audio and video formats
+    - split audio and video into separate files (mp4 and ogg)
 - imagemagick
-    - convert image formats
+    - `wget https://bit.camp/bitcamp-brand/logos/bitcamp.png`
+    - convert to jpg
+      - `convert bitcamp.png bitcamp.jpg`
+    - scale image
+      - `convert bitcamp.png -scale 50% bitcamp-small.png`
     - rotate images
+      - `convert bitcamp.png -rotate 90 bitcamp-rotated.png`
     - invert images
+      - `convert bitcamp.png -channel RGB -negate bitcamp-inverted.png`
+    - do it all!
+      - `convert bitcamp.png -rotate 90 -channel RGB -negate -scale 50% bitcamp.jpg`
 
 ## System info
 - top/htop
+  - task manager
 - neofetch
+  - fancy ascii logo
 
 ## Install and compile notcurses
 
-We did this earlier!
+Notcurses is a modern terminal gui library
 
 ```bash
 cd {path to repo}
@@ -111,9 +120,9 @@ less ./compile-notcurses.sh
 ./compile-notcurses.sh
 cd ~/bitcamp/notcurses-3.0.8
 make ncneofetch nctetris
-./ncneofetch
-./nctetris
-make demo
+./ncneofetch # neofetch alternative
+./nctetris # play tetris
+make demo # watch the demo
 ```
 
 ## Save your customizations into dotfiles!
@@ -133,7 +142,7 @@ yadm push main
 ```bash
 rm -r ~/bitcamp
 cd {this repository}
-./uninstall.sh (coming soon)
+./uninstall.sh
 ```
 
 ## License
