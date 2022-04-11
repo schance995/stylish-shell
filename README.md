@@ -21,6 +21,9 @@ less ./install-command-line-tools.sh
 ./install-command-line-tools.sh
 ```
 
+Warning: the install-command-line-tools.sh script might not work (non-deterministic). You can run each of the steps 
+manually in case it doesn't work.
+
 ## How does Linux software distribution work?
 - **upstream** = software developers
   - Linux devs
@@ -64,9 +67,11 @@ less ./install-command-line-tools.sh
 ## Fish and friends
 - **Not** POSIX
 - Typically **not** installed by default
+- Type `fish` to start fish
 - Copy the configuration file:
   - `cd {path to this repo}`
-  - `cp config.fish ~/.config/fish`
+  - `mkdir -p ~/.config/fish/`
+  - `cp config.fish ~/.config/fish/`
 - bat
   - like cat
 - exa
@@ -101,7 +106,7 @@ less ./install-command-line-tools.sh
 ## Media and documents
 - pandoc
     - convert this document!
-    - `pandoc style-your-shell-with-swagger.md -o style-your-shell-swith-swagger.pdf`
+    - `pandoc README.md -o README.html`
 - imagemagick
     - `wget https://bit.camp/bitcamp-brand/logos/bitcamp.png`
     - convert to jpg
@@ -156,6 +161,8 @@ yadm push main
 ```
 
 ## Don't like these changes? Reset them!
+
+Works even if the install scripts failed.
 
 ```bash
 rm -r ~/bitcamp
